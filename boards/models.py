@@ -1,6 +1,7 @@
 from django.db import models
+from common.models import CommonModel
 
-class Board(models.Model):
+class Board(CommonModel):
     title = models.CharField(max_length=30)
     content = models.TextField()
     writer = models.CharField(max_length=30)

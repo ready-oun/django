@@ -4,7 +4,7 @@ from .models import Board
 @admin.register(Board)
 class BoardAdmin(admin.ModelAdmin):
 	# 관리자 페이지의 목록에 표시할 필드들을 지정
-	list_display = ('title', 'writer', 'date', 'likes', 'content')
+	list_display = ('title', 'writer', 'date', 'likes', 'content', 'updated_at', 'created_at')
 	# 목록 페이지에서 필터 옵션으로 사용될 필드를 지정
 	list_filter = ('date', 'writer')
 	# 검색 기능에서 사용할 필드를 지정
