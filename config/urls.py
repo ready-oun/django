@@ -22,6 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/v1/feeds/", include("feeds.urls")),
     path("api/v1/users/", include("users.urls")),
+    path("api/v1/reviews/", include("reviews.urls")),
     # path("feeds/", include("feeds.urls")),
     # path("feeds/", views.show_feed),
     # path("feeds/all", views.all_feed),
