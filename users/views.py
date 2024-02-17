@@ -29,3 +29,24 @@ class Users(APIView):
             return Response(serializer.data)
         else:
             raise ParseError(serializer.errors)
+
+# api/v1/users/myinfo [GET, PUT] ==> update datas        
+class MyInfo(APIView):
+    def get(self, request):
+        user = request.user
+        serializer = MyInfoUserSerializer(user)
+
+        return Response(serializer.data)
+    
+    def put(self, request):
+        user = request.user
+        serializer = MyInfoUserSerializer(user, data=request.data, partial=True)
+
+        if serializer.is_valid():
+            user = serializer.save()
+            serializer = MyInfoUserSerializer(user)
+
+            return Response(serializer.data)
+        
+        else:
+            return Response(serializer.errors)
