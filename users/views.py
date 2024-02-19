@@ -55,3 +55,23 @@ class MyInfo(APIView):
         
         else:
             return Response(serializer.errors)
+
+from django.contrib.auth import authenticate, login
+from rest_framework import status
+# api/v1/login
+class Login(APIView):
+    def post(self, request):
+        username = request.data.get('username')
+        password = request.data.get('password')
+
+        if not username or password:
+            raise ParseError()
+        
+        user = authenticate(request, username=username, password=password)
+
+        if user:
+            login(user)
+            return Response(status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_403_FORBIDDEN)
+

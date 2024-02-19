@@ -5,5 +5,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 urlpatterns = [
     path("", views.Users.as_view()), # api/v1/users/
     path("myinfo/", views.MyInfo.as_view()), # api/users/myinfo
+    # Authentication
     path("getToken", obtain_auth_token),
+    path("login", views.Login.as_view()), # Django Session login 
 ]
