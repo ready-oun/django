@@ -135,8 +135,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # will use this model as User in users
 AUTH_USER_MODEL = "users.User"
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication', # 추가
-    ],
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.TokenAuthentication', # 추가
+#     ],
+# }

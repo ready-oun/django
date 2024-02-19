@@ -8,4 +8,5 @@ urlpatterns = [
     # Authentication
     path("getToken", obtain_auth_token),
     path("login", views.Login.as_view()), # Django Session login 
+    path("logout", views.Logout.as_view()), # Django Session logout 
 ]
